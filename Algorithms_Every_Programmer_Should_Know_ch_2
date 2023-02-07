@@ -1,0 +1,1621 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mOPd0iT3McCx"
+      },
+      "source": [
+        "# CHAPTER 2. Data Structures Used in Algorithms"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "nowPy0VZMcC2"
+      },
+      "source": [
+        "# 1 Exploring data structures in Python\n",
+        "\n",
+        "In any language data structures are used to store and manipulate complex data. In Python, the data structures are a storage containers to manage, organize and search data in an efficient way. They are used to store a group of data elements called collection, that need to be stored and processed together. In Python, there are five various data structures that can be used to store collections:\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "collapsed": true,
+        "id": "afNtZJo1McC2"
+      },
+      "source": [
+        "## 1.1 Lists\n",
+        "In Python, a list is the  main data structure used to store a mutable sequence of elements. The sequence of data elements stored in the list need not be of the same type.\n",
+        "\n",
+        "To create a list, the data elements need to be enclosed in [ ] and they need to be separated by a comma. For example, the following code creates four data elements together which are of different types."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "-sUa2MFDMcC3"
+      },
+      "outputs": [],
+      "source": [
+        "aList = [\"John\", 33,\"Toronto\", True]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "l4dcSiauMcC4",
+        "outputId": "b8423f9e-8046-4b95-fafe-dfca85008a47"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['John', 33, 'Toronto', True]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 2
+        }
+      ],
+      "source": [
+        "aList"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "15ci8qHYMcC5",
+        "outputId": "3a488b6f-aef1-4f05-8082-5f04a0c57e64"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "list"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ],
+      "source": [
+        "type(aList)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "id": "R-5MB8lAMcC6"
+      },
+      "outputs": [],
+      "source": [
+        "bin_colors=['Red','Green','Blue','Yellow']"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "bin_colors[1]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "ME4T7kBiMiPO",
+        "outputId": "8694d484-1f0a-4cd4-8d5a-85eec04b8332"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Green'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "LGUciJMnMcC6"
+      },
+      "source": [
+        "### 1.1.2 Slicing\n",
+        "If we want to retrieve a subset of the elements of a list by specifying a range of indexes, it is called slicing.  Following code can be used to create a slice of the list:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "JYwUj0bTMcC6",
+        "outputId": "0090a135-826b-4a17-99cd-c4a1e5043920"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "['Red', 'Green']"
+            ]
+          },
+          "execution_count": 5,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "bin_colors[0:2]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "TTxYldfMMcC7",
+        "outputId": "1123e185-0175-42bc-8338-c9e14b03b759"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "'Green'"
+            ]
+          },
+          "execution_count": 6,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "bin_colors[1]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "qC9dzMWfMcC7",
+        "outputId": "bee41eda-3d73-4c7f-d050-451abe5ce91a"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "['Blue', 'Yellow']"
+            ]
+          },
+          "execution_count": 7,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "bin_colors[2:]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "P0mxrA0oMcC8",
+        "outputId": "88d94795-dc94-4cc9-a755-084169133dae"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "['Red', 'Green']"
+            ]
+          },
+          "execution_count": 8,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "bin_colors[:2]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "exzMjsVOMcC8"
+      },
+      "source": [
+        "### 1.1.3 Negative Indices\n",
+        " In Python we also have negative indices which count from the end of the list. This is demonstrated in the following code:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "BBSoF3BdMcC8",
+        "outputId": "9bb134c7-07c0-424e-acbc-00d8da954cac"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "['Red', 'Green', 'Blue']"
+            ]
+          },
+          "execution_count": 9,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "bin_colors[:-1]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "_qjzQrcOMcC8",
+        "outputId": "adb9d30e-402e-497e-d4c9-fbb76688c3ac"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "['Red', 'Green']"
+            ]
+          },
+          "execution_count": 10,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "bin_colors[:-2]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 9,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CLA-r3rmMcC9",
+        "outputId": "f4b44f92-6443-4ed7-9e51-ff11264dfa9a"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['Green', 'Blue']"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 9
+        }
+      ],
+      "source": [
+        "bin_colors[-3:-1]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "vc95j3hSMcC9"
+      },
+      "source": [
+        "### 1.1.4 Nesting\n",
+        "An element of a list can be of a simple data type or a complex data type. This allows nesting in lists. For iterative and recursive algorithms, this provides important capabilities. "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "metadata": {
+        "id": "cGUoumbaMcC9"
+      },
+      "outputs": [],
+      "source": [
+        "a = [1,2,[100,200,300],6]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "max(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 169
+        },
+        "id": "KCU-AYMxM_Cq",
+        "outputId": "eded9948-0f84-4f6c-edd4-d2d07a66f555"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-7-9b2b5820376f>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mmax\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0ma\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m: '>' not supported between instances of 'list' and 'int'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "nNLPT0IcMcC9",
+        "outputId": "b65c3df5-d674-4ead-dc66-5d45b89576be"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "300"
+            ]
+          },
+          "execution_count": 13,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "max(a[2])"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "civ_sY7xMcC-",
+        "outputId": "8b68bea1-5c8b-4431-ccb0-73fe0ccd120a"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "200"
+            ]
+          },
+          "execution_count": 14,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "a[2][1]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "PF15RtgjMcC-"
+      },
+      "source": [
+        "### 1.1.5 Iteration"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "BjvN_0hxMcC-",
+        "outputId": "b5750b2c-8d82-47a7-c5f7-9785610b3cc3"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Red Square\n",
+            "Green Square\n",
+            "Blue Square\n",
+            "Yellow Square\n"
+          ]
+        }
+      ],
+      "source": [
+        "for aColor in bin_colors:\n",
+        "    print(aColor+ \" Square\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "usCMvEXnMcC-"
+      },
+      "source": [
+        "### 1.1.6 Lambda\n",
+        "There are a bunch of lambda functions that can be used on lists. They are specifically important in the context of algorithms and provides the ability to create a function on-the-fly. Sometimes in literature, they are also called anonymous functions. This section demonstrates its use :\n",
+        "\n",
+        "##### Filtering data: \n",
+        "To filter the data, first, we define a predicate which is a function that inputs a single argument and returns a boolean value. Following code demonstrates its use:\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "JPWWG_ptMcC-",
+        "outputId": "a2bcfd53-fb16-434d-e7ae-979584a9cdd0"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "[200, 300, 1000]"
+            ]
+          },
+          "execution_count": 16,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "list(filter(lambda x: x > 100, [-5, 200, 300, -10, 10, 1000]))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "zsnwPUdRMcC_"
+      },
+      "source": [
+        "##### Data transformation: \n",
+        "    map() function can be used for data transformation using a lambda function. The example is as follows:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "T_pKCkhMMcC_",
+        "outputId": "a1089a04-e342-45db-c9d2-db05d8d95375"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "[121, 484, 1089, 1936, 3025]"
+            ]
+          },
+          "execution_count": 17,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "list(map(lambda x: x ** 2, [11, 22, 33, 44,55]))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "SiVo75BmMcC_"
+      },
+      "source": [
+        "##### Data Aggregation: \n",
+        "For data aggregation, the reduce() function can be used which recursively runs a function to pairs of values on each element of the list: "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "78U8ZG0gMcC_",
+        "outputId": "b55c3a76-de6a-4eda-f5d0-c2f0cb933d84"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "The result of data aggregation is 270\n"
+          ]
+        }
+      ],
+      "source": [
+        "from functools import reduce\n",
+        "def doSum(x1,x2):\n",
+        "    return x1+x2\n",
+        "x = reduce(doSum, [100, 122, 33, 4, 5, 6])\n",
+        "print (f\"The result of data aggregation is {x}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "XRR0678BMcC_"
+      },
+      "source": [
+        "##### Range Function:\n",
+        "The range function can be used to easily generate a large list of numbers.  It is used to auto-populate sequences of numbers in a list.\n",
+        "\n",
+        "The range function is simple to use. We can use it by just specifying the number of elements we want in the list. By default it starts from zero and increment by one."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "zM_dX5f_McC_"
+      },
+      "source": [
+        "## Tuples\n",
+        "The second data structure that can be used to store a collection is tuple. In contrast to list, tuples are immutable(read-only) data structures. Tuples consist of several elements surrounded by ( ).\n",
+        "\n",
+        "Like lists, elements within a tuple can be of different types. They also allow complex data types for their elements. So there can be a tuple within a tuple providing a way to create nested data structure. Capability to create nested data structures is especially useful in iterative and recursive algorithms.\n",
+        "\n",
+        "Following code demonstrate how to create tuples"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "OMEX4JmoMcDA",
+        "outputId": "a9456b60-155c-4cc0-85f0-a1f9ac6aa346"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "The second element of the tuple is Green\n"
+          ]
+        }
+      ],
+      "source": [
+        "bin_colors=('Red','Green','Blue','Yellow')\n",
+        "print(f\"The second element of the tuple is {bin_colors[1]}\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "2CV3e_HEMcDA",
+        "outputId": "aaf044d0-ead0-4aa6-f779-b8f09e65252f"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "The elements after thrid element onwards are ('Blue', 'Yellow')\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(f\"The elements after thrid element onwards are {bin_colors[2:]}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "dVPVMTKfMcDA"
+      },
+      "source": [
+        "Let us define nested tuple data structure"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 11,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "quw1uJjuMcDA",
+        "outputId": "e8ef8592-f742-46a2-892f-542aedf2e39d"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The maximum value of the inner tuple 300\n"
+          ]
+        }
+      ],
+      "source": [
+        "nested_tuple = (1,2,(100,200,300),6)\n",
+        "print(f\"The maximum value of the inner tuple {max(nested_tuple[2])}\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nested_tuple[1]=3"
+      ],
+      "metadata": {
+        "id": "nXh4MvyiSRaI",
+        "outputId": "399aee1a-2e6f-4a30-ac5e-09b319556d0b",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 169
+        }
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-12-6f00bbd41c70>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mnested_tuple\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;36m3\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m: 'tuple' object does not support item assignment"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1zqk3vDgMcDA"
+      },
+      "source": [
+        "## 1.2 Dictionary \n",
+        "To create a simple dictionary that assigns colors to various variables, the key-value pairs need to be enclosed in { }. For example, the following code creates a simple dictionary consisting of three key-value pairs:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "gSTg3AwpMcDA"
+      },
+      "outputs": [],
+      "source": [
+        "bin_colors ={\n",
+        "  \"manual_color\": \"Yellow\",\n",
+        "  \"approved_color\": \"Green\",\n",
+        "  \"refused_color\": \"Red\"\n",
+        "}"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "FaVJPmYwMcDB",
+        "outputId": "1135423d-5abc-4263-a97a-a51b2a30057c"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "{'manual_color': 'Yellow', 'approved_color': 'Green', 'refused_color': 'Red'}\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(bin_colors)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "sno2qMB_McDB",
+        "outputId": "a4f7d0a5-9ed4-478c-d9e4-5ce2480bff41"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "'Green'"
+            ]
+          },
+          "execution_count": 24,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "bin_colors.get('approved_color')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "TLQTZu2FMcDB",
+        "outputId": "9ee72471-f0d7-476f-b2c2-fe282cf38878"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "'Green'"
+            ]
+          },
+          "execution_count": 25,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "bin_colors['approved_color']"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "iKc1QnQzMcDB"
+      },
+      "outputs": [],
+      "source": [
+        "bin_colors['approved_color']=\"Purple\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "PE9-vTV6McDB",
+        "outputId": "7eaed59d-23bc-4691-99e4-7fd14e8068ed"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "{'manual_color': 'Yellow', 'approved_color': 'Purple', 'refused_color': 'Red'}\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(bin_colors)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "collapsed": true,
+        "id": "eGWD69KPMcDB"
+      },
+      "source": [
+        "## 1.3 Set\n",
+        "A set is defined as a collection of elements which can be of different types. The elements are enclosed with { }. For example, have a look at the following code block:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "6dfCSfmRMcDB",
+        "outputId": "d4fba957-929a-477c-b473-2616d0760294"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "{'leaves', 'grass'}\n"
+          ]
+        }
+      ],
+      "source": [
+        "green = {'grass', 'leaves'}\n",
+        "print(green)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "J5rrvI1iMcDB"
+      },
+      "outputs": [],
+      "source": [
+        "yellow = {'dandelions', 'fire hydrant', 'leaves'}\n",
+        "red = {'fire hydrant', 'blood', 'rose', 'leaves'}"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "arVccJZ3McDC",
+        "outputId": "e664e086-b648-4bb7-f349-b288aa14111d"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "The union of yellow and red sets is {'rose', 'dandelions', 'blood', 'fire hydrant', 'leaves'}\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(f\"The union of yellow and red sets is {yellow|red}\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "ccMrVjxUMcDC",
+        "outputId": "98ba9ef5-d328-4385-d814-3c7cca87b891"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "The intersaction of yellow and red is {'fire hydrant', 'leaves'}\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(f\"The intersaction of yellow and red is {yellow&red}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZMlZlAcdMcDC"
+      },
+      "source": [
+        "## 1.4 DataFrame\n",
+        "DataFrame is a data structure used to store tabular data available in Python's pandas package. It is one of the most important data structures for algorithm and is used to process traditional structured data.  \n",
+        "Now let us represent this by a DataFrame\n",
+        "\n",
+        "A simple DataFrame can be created by using the following code. "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "76Nw-l6LMcDC",
+        "outputId": "25b88caa-c81a-4156-8f25-c4bfcc30c35c"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "  id    name  age  decision\n",
+            "0  1   Fares   32      True\n",
+            "1  2   Elena   23     False\n",
+            "2  3  Steven   40      True\n"
+          ]
+        }
+      ],
+      "source": [
+        "import pandas as pd\n",
+        "df = pd.DataFrame([\n",
+        "    ['1', 'Fares', 32, True],\n",
+        "    ['2', 'Elena', 23, False],\n",
+        "    ['3', 'Steven', 40, True]])\n",
+        "df.columns = ['id', 'name', 'age', 'decision']\n",
+        "print(df)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "UC3p1xdYMcDC"
+      },
+      "source": [
+        "### 1.4.1 Column Selection"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "OBKf1XK7McDC"
+      },
+      "source": [
+        "The values of name and age columns are "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "2FrrCfTLMcDC",
+        "outputId": "674a0436-4e14-4b87-846f-648397e281c8"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>name</th>\n",
+              "      <th>age</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Fares</td>\n",
+              "      <td>32</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Elena</td>\n",
+              "      <td>23</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Steven</td>\n",
+              "      <td>40</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "     name  age\n",
+              "0   Fares   32\n",
+              "1   Elena   23\n",
+              "2  Steven   40"
+            ]
+          },
+          "execution_count": 33,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df[['name','age']]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ds9-N4-4McDC"
+      },
+      "source": [
+        "The positioning of a column is deterministic in a data frame. Fourth column can be retrieved by its position as follows:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "cgZE8uzDMcDC",
+        "outputId": "351dba01-96fa-4b1d-b130-e380ecad0037"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "0     True\n",
+              "1    False\n",
+              "2     True\n",
+              "Name: decision, dtype: bool"
+            ]
+          },
+          "execution_count": 34,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df.iloc[:,3] "
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "TddtFi3qMcDC"
+      },
+      "source": [
+        "### 1.4.2 Row Selection"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_IvhnFNEMcDD"
+      },
+      "source": [
+        "Each row in DataFrame corresponds to a data-point in our problem space. We need to perform row selection if we want to create a subset of the data elements we have in our problem space. This subset can be created by using one of the two methods\n",
+        "\n",
+        "By specifying their position \n",
+        "By specifying a filter\n",
+        "A subset of rows can be retrieved by its position as follows:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "_Dwe9fZGMcDD",
+        "outputId": "4eb32859-fd3c-4160-fc54-40a69537854c"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>id</th>\n",
+              "      <th>name</th>\n",
+              "      <th>age</th>\n",
+              "      <th>decision</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>Elena</td>\n",
+              "      <td>23</td>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>Steven</td>\n",
+              "      <td>40</td>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "  id    name  age  decision\n",
+              "1  2   Elena   23     False\n",
+              "2  3  Steven   40      True"
+            ]
+          },
+          "execution_count": 35,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df.iloc[1:3,:]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8gSXm8EZMcDD"
+      },
+      "source": [
+        "To create a subset by specifying the filter, we need to use one or more columns to define the selection criterion. For example, a subset of data elements can be selected by this method as follows:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "8JVBtQDwMcDD",
+        "outputId": "c7db289f-952b-4395-9747-7a198acc2380"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>id</th>\n",
+              "      <th>name</th>\n",
+              "      <th>age</th>\n",
+              "      <th>decision</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>Fares</td>\n",
+              "      <td>32</td>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>Steven</td>\n",
+              "      <td>40</td>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "  id    name  age  decision\n",
+              "0  1   Fares   32      True\n",
+              "2  3  Steven   40      True"
+            ]
+          },
+          "execution_count": 36,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df[df.age>30]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "JFSHsmA7McDD",
+        "outputId": "055e6d0f-d5de-42b7-c527-87380f3414e6"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>id</th>\n",
+              "      <th>name</th>\n",
+              "      <th>age</th>\n",
+              "      <th>decision</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>Fares</td>\n",
+              "      <td>32</td>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "  id   name  age  decision\n",
+              "0  1  Fares   32      True"
+            ]
+          },
+          "execution_count": 37,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df[(df.age<35)&(df.decision==True)]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "nlKntoNWMcDD"
+      },
+      "source": [
+        "# 2 Stack\n",
+        "Stack is a linear data structure to store one dimensional list. It can store items either in Last-In First-Out (LIFO) or First-In Last-Out (FILO) manner. The defining characteristic of a stack is way elements are added and removed from it. A new element is added at one end and an element is removed from that end only.\n",
+        "\n",
+        "Following are the operations related to stack:\n",
+        "\n",
+        "isEmpty: Returns true if stack is empty\n",
+        "push: Adds a new element.\n",
+        "pop: It returns the element added most recently and removes it.\n",
+        "\n",
+        "Let us create a class named Stack in Python, where we will define all the operations related to stack class. The code of this class will be as following:\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "JPKO5cPRMcDD"
+      },
+      "outputs": [],
+      "source": [
+        "class Stack:\n",
+        "     def __init__(self):\n",
+        "         self.items = []\n",
+        "     def isEmpty(self):\n",
+        "         return self.items == []\n",
+        "     def push(self, item):\n",
+        "         self.items.append(item)\n",
+        "     def pop(self):\n",
+        "         return self.items.pop()\n",
+        "     def peek(self):\n",
+        "         return self.items[len(self.items)-1]\n",
+        "     def size(self):\n",
+        "         return len(self.items)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "p_mQdbyoMcDD"
+      },
+      "source": [
+        "To push four elements to the stack following code can be used:"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "h75xTgEnMcDD"
+      },
+      "source": [
+        "## Populate the stack"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "sPajV1eAMcDD"
+      },
+      "outputs": [],
+      "source": [
+        "stack=Stack()\n",
+        "stack.push('Red')\n",
+        "stack.push('Green')\n",
+        "stack.push(\"Blue\")\n",
+        "stack.push(\"Yellow\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "K3-Ymh_AMcDE"
+      },
+      "source": [
+        "### Pop"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "avbhhvXGMcDE",
+        "outputId": "e641ae00-de45-4e3c-e816-0487f0c661a1"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "'Yellow'"
+            ]
+          },
+          "execution_count": 40,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "stack.pop()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "uoakFqCeMcDE",
+        "outputId": "fcbad83d-ee15-4128-a4f4-dad10e15cb22"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "False"
+            ]
+          },
+          "execution_count": 41,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "stack.isEmpty()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "rdS3IbCEMcDE"
+      },
+      "outputs": [],
+      "source": [
+        "colors = ['Red']"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "CDCPq2X4McDE"
+      },
+      "outputs": [],
+      "source": [
+        "colors.append('Green')\n",
+        "colors.append('Yellow')\n",
+        "colors.append('Blue')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "fDFP_qPJMcDE",
+        "outputId": "82eb2b5a-0aee-490c-dc10-210a7c25fe1a"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "['Red', 'Green', 'Yellow', 'Blue']"
+            ]
+          },
+          "execution_count": 44,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "colors"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "7CKS05WAMcDE"
+      },
+      "source": [
+        "# Queue\n",
+        "Like stack, queue stores n elements in a single-dimensional structure. The elements are added and removed in First-In First-Out (FIFO) format. One end of the queue is called rear and the other one is called the front. The elements are removed from the front, and the operation is called dequeue.  The elements are added at the rear and the operation is called enqueue.\n",
+        "\n",
+        "The queue shown in the preceding figure can be implemented by using the following code:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "itkqlQFaMcDE"
+      },
+      "outputs": [],
+      "source": [
+        "class Queue(object):\n",
+        "   def __init__(self):\n",
+        "      self.items = []\n",
+        "   def isEmpty(self):\n",
+        "      return self.items == []\n",
+        "   def enqueue(self, item):\n",
+        "       self.items.insert(0,item)\n",
+        "   def dequeue(self):\n",
+        "      return self.items.pop()\n",
+        "   def size(self):\n",
+        "      return len(self.items)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "rfuqU7gBMcDE"
+      },
+      "outputs": [],
+      "source": [
+        "queue = Queue()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "7vDukKj7McDE"
+      },
+      "outputs": [],
+      "source": [
+        "queue.enqueue(\"Red\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "QNO2XJESMcDE"
+      },
+      "outputs": [],
+      "source": [
+        "queue.enqueue('Green')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "sS_Os1CNMcDF"
+      },
+      "outputs": [],
+      "source": [
+        "queue.enqueue('Blue')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "YG7UQnU4McDF"
+      },
+      "outputs": [],
+      "source": [
+        "queue.enqueue('Yellow')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "jSULpicgMcDF",
+        "outputId": "06965418-3f97-4ef6-bb2b-0d1c34247bcf"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Size of queue is 4\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(f\"Size of queue is {queue.size()}\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "3FwhIhu9McDF",
+        "outputId": "f49a5c01-8992-4c9b-8429-fd78a46fb4de"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Red\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(queue.dequeue())"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "Z0-2CaifMcDF"
+      },
+      "outputs": [],
+      "source": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.7.3"
+    },
+    "colab": {
+      "provenance": []
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
